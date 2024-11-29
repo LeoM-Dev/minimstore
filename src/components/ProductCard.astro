@@ -19,17 +19,17 @@ const { id, name, price, image, category } = Astro.props;
     />
     <div class="absolute inset-0 bg-minim-charcoal/0 group-hover:bg-minim-charcoal/20 transition-colors duration-300"></div>
   </div>
-  <div class="text-center mb-3 bg-white rounded-md p-3">
+  <div class="text-center mb-3 backdrop-blur-lg bg-white/50 rounded-md p-3">
     
     <div class="flex flex-row items-center justify-between gap-5">
-      <h3 class="font-display text-base text-lg">{name}</h3>
-      <p class="font-sans text-sm ">${price}</p>
+      <h3 class="font-display text-base font-semibold text-lg">{name}</h3>
+      <p class="font-sans font-medium text-sm ">${price}</p>
     </div>
 
     <div class=" flex justify-between items-center">
-      <p class="font-sans text-xs tracking-widest text-minim-stone/60">{category}</p>
+      <p class="font-sans text-xs tracking-widest font-medium text-minim-stone/60">{category}</p>
           
-      <a href="" class="font-sans text-sm text-minim-charcoal/60 hover:text-minim-charcoal transition-colors">
+      <a href="" class="font-sans text-sm decoration-solid text-minim-charcoal/60 hover:text-minim-charcoal transition-colors">
         Learn more
       </a>
     </div>
