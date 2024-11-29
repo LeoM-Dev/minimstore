@@ -1,0 +1,63 @@
+---
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Minim - Elegant Clothing Store" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-minim-cream text-minim-stone">
+    <nav class="fixed w-full bg-minim-cream/90 backdrop-blur-sm z-40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <a href="/" class="font-display text-3xl tracking-wider">MINIM</a>
+          <div class="hidden md:flex space-x-8 font-sans text-sm tracking-widest">
+            <a href="/collections" class="hover:text-minim-charcoal transition-colors">COLLECTIONS</a>
+            <a href="/about" class="hover:text-minim-charcoal transition-colors">ABOUT</a>
+            <a href="/gallery" class="hover:text-minim-charcoal transition-colors">GALLERY</a>
+            <button id="cart-button" class="hover:text-minim-charcoal transition-colors relative">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
+              <span id="cart-count" class="absolute -top-2 -right-2 bg-minim-charcoal text-white text-xs w-5 h-5 rounded-full flex items-center justify-center hidden">0</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <slot />
+    <footer class="bg-minim-sand mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="font-display text-xl mb-4">Visit Us</h3>
+            <p class="font-sans text-sm">123 Fashion Avenue<br/>New York, NY 10001</p>
+          </div>
+          <div>
+            <h3 class="font-display text-xl mb-4">Contact</h3>
+            <p class="font-sans text-sm">contact@minim.com<br/>+1 (555) 123-4567</p>
+          </div>
+          <div>
+            <h3 class="font-display text-xl mb-4">Follow Us</h3>
+            <div class="font-sans text-sm space-y-2">
+              <a href="#" class="block hover:text-minim-charcoal transition-colors">Instagram</a>
+              <a href="#" class="block hover:text-minim-charcoal transition-colors">Pinterest</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

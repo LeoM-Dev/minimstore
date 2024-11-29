@@ -1,0 +1,43 @@
+---
+interface Props {
+  id: string;
+  name: string;
+  price: number;
+  image: string;
+  category: string;
+}
+
+const { id, name, price, image, category } = Astro.props;
+---
+
+<div class="group">
+  <div class="aspect-[4/5] relative overflow-hidden mb-3">
+    <img 
+      src={image} 
+      alt={name}
+      class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+    />
+    <div class="absolute inset-0 bg-minim-charcoal/0 group-hover:bg-minim-charcoal/20 transition-colors duration-300"></div>
+  </div>
+  <div class="text-center">
+    <p class="font-sans text-xs tracking-widest text-minim-stone/60 mb-0.5">{category}</p>
+    <h3 class="font-display text-base mb-0.5">{name}</h3>
+    <p class="font-sans text-sm mb-3">${price}</p>
+    <button 
+      class="add-to-cart-btn w-full bg-minim-charcoal text-white px-4 py-2 text-xs tracking-widest hover:bg-minim-stone transition-colors"
+      data-product={JSON.stringify({ id, name, price, image })}
+    >
+      ADD TO CART
+    </button>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+    button.addEventListener('click', (e) => {
+      const product = JSON.parse(button.dataset.product || '{}');
+      window.cart.addItem(product);
+      document.getElementById('shopping-cart')?.classList.add('translate-x-0');
+    });
+  });
+</script>

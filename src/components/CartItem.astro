@@ -1,0 +1,19 @@
+---
+interface Props {
+  name: string;
+  price: number;
+  image: string;
+  quantity: number;
+}
+
+const { name, price, image, quantity } = Astro.props;
+---
+
+<div class="flex items-center py-4 border-b border-minim-stone/10">
+  <img src={image} alt={name} class="w-20 h-20 object-cover" />
+  <div class="ml-4 flex-1">
+    <h3 class="font-display text-lg">{name}</h3>
+    <p class="font-sans text-sm text-minim-stone/60">Quantity: {quantity}</p>
+  </div>
+  <p class="font-sans">${price * quantity}</p>
+</div>
