@@ -57,15 +57,6 @@ const products = [
     />
 
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-center mb-12">
-        <nav class="flex gap-8 font-sans text-sm tracking-widest">
-          <a href="#" class="hover:text-minim-charcoal transition-colors">ALL</a>
-          <a href="#" class="hover:text-minim-charcoal transition-colors">DRESSES</a>
-          <a href="#" class="hover:text-minim-charcoal transition-colors">OUTERWEAR</a>
-          <a href="#" class="hover:text-minim-charcoal transition-colors">KNITWEAR</a>
-        </nav>
-      </div>
-
       <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {products.map(product => (
           <ProductCard {...product} />
